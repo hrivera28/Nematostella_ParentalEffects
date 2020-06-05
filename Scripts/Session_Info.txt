@@ -1,0 +1,33 @@
+R version 3.6.1 (2019-07-05)
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+Running under: macOS Mojave 10.14.6
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] DescTools_0.99.34 rcompanion_2.3.25 dplyr_0.8.5       plyr_1.8.6        ggpubr_0.2.5      magrittr_1.5     
+ [7] stargazer_5.2.2   lme4_1.1-21       Matrix_1.2-18     multcomp_1.4-12   TH.data_1.0-10    survival_3.1-11  
+[13] mvtnorm_1.1-0     ggeffects_0.14.3  ggplot2_3.3.0     drc_3.0-1         MASS_7.3-51.5    
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.4.6       lattice_0.20-41    multcompView_0.1-8 zoo_1.8-8          gtools_3.8.2      
+ [6] lmtest_0.9-37      assertthat_0.2.1   R6_2.4.1           cellranger_1.1.0   stats4_3.6.1      
+[11] EMT_1.1            pillar_1.4.4       rlang_0.4.6        curl_4.3           readxl_1.3.1      
+[16] rstudioapi_0.11    minqa_1.2.4        data.table_1.12.8  car_3.0-7          nloptr_1.2.2.1    
+[21] splines_3.6.1      foreign_0.8-76     munsell_0.5.0      compiler_3.6.1     pkgconfig_2.0.3   
+[26] libcoin_1.0-5      insight_0.8.4      tidyselect_1.1.0   expm_0.999-4       tibble_3.0.1      
+[31] coin_1.3-1         matrixStats_0.56.0 rio_0.5.16         codetools_0.2-16   crayon_1.3.4      
+[36] withr_2.2.0        grid_3.6.1         nlme_3.1-145       gtable_0.3.0       lifecycle_0.2.0   
+[41] scales_1.1.1       zip_2.0.4          stringi_1.4.6      carData_3.0-3      ggsignif_0.6.0    
+[46] ellipsis_0.3.1     vctrs_0.3.0        nortest_1.0-4      boot_1.3-24        sandwich_2.5-1    
+[51] openxlsx_4.1.4     sjlabelled_1.1.4   tools_3.6.1        forcats_0.5.0      glue_1.4.1        
+[56] purrr_0.3.4        hms_0.5.3          parallel_3.6.1     abind_1.4-5        plotrix_3.7-7     
+[61] colorspace_1.4-1   haven_2.2.0        modeltools_0.2-23 
