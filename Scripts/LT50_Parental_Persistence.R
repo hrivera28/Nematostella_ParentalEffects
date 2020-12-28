@@ -12,7 +12,7 @@ library(dplyr)
 library(ggpubr)
 library(rcompanion)
 library(multcomp)
-load('Persistence_data.RData')
+#load('Persistence_data.RData')
 
 ####################################### 
 ## Run two models for each cohort 
@@ -77,10 +77,9 @@ t.test(LT50~Treatment, data=LT_mat_P, paired=TRUE)
 ### Plotting results
 cons_palette<-c("#D55E00", "#CC79A7", "#999999") # keep colors consistent across parental pops
 
-(F1<-ggplot(LT_mat_P, aes(x=Treatment, y=LT50, group=Cohort, colour=Cohort))+
-  geom_point(position=position_dodge(width = 0.1))+
-  geom_line(position=position_dodge(width = 0.1))+
-  geom_errorbar(aes(ymin=LT50-SE, ymax=LT50+SE),width=0, position=position_dodge(width = 0.1))+
+(F1<-ggplot(LT_mat_P, aes(x=Treatment, y=LT50, ))+geom_boxplot(outlier.shape = NA, aes(colour=Treatment))+
+  geom_point(position=position_dodge(width = 0.1), aes(colour=Cohort))+
+  geom_line(position=position_dodge(width = 0.1), aes(colour=Cohort,group=Cohort))+
   theme_minimal()+theme(panel.grid.minor = element_blank(),
                         legend.position = "bottom", 
                         legend.background = element_rect(size=0.25), 
@@ -88,6 +87,6 @@ cons_palette<-c("#D55E00", "#CC79A7", "#999999") # keep colors consistent across
   scale_y_continuous(breaks=c(40.8,41,41.2,41.4,41.6,41.8), limits=c(40.75,41.8), labels=NULL)+
   xlab("")+ylab("")+
   scale_x_discrete(labels=c("Controls", "STHS"), expand=c(0.1,0.1))+
-  scale_color_manual(values = cons_palette)+guides(colour=FALSE))
+  scale_color_manual(values = c("lightskyblue3",  cons_palette, "coral3"))+guides(colour=FALSE))
 
-ggsave("Fig1F.png", width=3, height=3, units="in", dpi=300)
+ggsave("Fig1F_new.png", width=3, height=3, units="in", dpi=300)

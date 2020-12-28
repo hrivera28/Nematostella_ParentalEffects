@@ -150,7 +150,7 @@ t.test(subset(GE_df_fam_mean, LongLarvalCategory=="CCB" & Gene=="MnSOD2")$Mean_F
           strip.text=element_text(size=8, colour="black", face="bold")))
 
 ggsave(filename="/Users/hannyrivera/Documents/Stella_Paper/Manuscript/Figures/FigS4/FigS4.png", 
-       width=6, height=3, units="in", dpi=300)
+       width=7, height=5, units="in", dpi=300)
 
 ## Making each plot individually to control axes better 
 

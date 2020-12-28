@@ -13,7 +13,7 @@ library(dplyr)
 library(ggpubr)
 library(rcompanion)
 library(multcomp)
-load("Main_parental.RData")
+#load("Main_parental.RData")
 
 #####
 # Run survival models for each cohort 
@@ -117,9 +117,9 @@ t.test(LT50~Treatment, data=LT_mat, paired=TRUE, alternative="less")
 # Let's plot the differences by cohort all on the same plot
 cbbPalette <- c("#000000", "#E69F00", "#5956A0", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999")
 # Panel E Figure 1
-(E1<-ggplot(LT_mat, aes(x=Treatment, y=LT50, group=Cohort, colour=Cohort))+
-    geom_point(position=position_dodge(width = 0.1))+
-    geom_line(position=position_dodge(width = 0.1))+
+(E1<-ggplot(LT_mat, aes(x=Treatment, y=LT50))+geom_boxplot(outlier.shape = NA, aes(colour=Treatment))+
+    geom_point(position=position_dodge(width = 0.1), aes(colour=Cohort))+
+    geom_line(position=position_dodge(width = 0.1), aes(group=Cohort, colour=Cohort))+
     geom_errorbar(aes(ymin=LT50-SE, ymax=LT50+SE),width=0, position=position_dodge(width = 0.1))+
     theme_minimal()+theme(panel.grid.minor = element_blank(), legend.position = "bottom",
                           legend.background = element_rect(colour="gray"),
@@ -129,11 +129,11 @@ cbbPalette <- c("#000000", "#E69F00", "#5956A0", "#009E73", "#F0E442", "#0072B2"
                           axis.title.y=element_text(size=10, colour="black", face="bold"))+
     xlab("")+ylab("LT50 (°C)")+
     scale_y_continuous(breaks=c(40.8,41,41.2,41.4,41.6,41.8), limits=c(40.75,41.8))+
-    scale_color_manual(values = cbbPalette)+scale_x_discrete(labels=c("Controls", "STHS"), expand=c(0.1,0.1))+
-    annotate("text", label="*", size=6, x=2, y=41.7)+labs(colour="Cohort")+guides(colour = guide_legend(nrow = 1)))
+    scale_color_manual(values = c("lightskyblue3", cbbPalette, "coral3"))+scale_x_discrete(labels=c("Controls", "STHS"), expand=c(0.1,0.1))+
+    annotate("text", label="*", size=6, x=2, y=41.8)+labs(colour="Cohort")+guides(colour = guide_legend(nrow = 1)))
 
 ggarrange(E1, F1, common.legend = TRUE, align="h", legend="bottom")    
-ggsave("Fig1EF.png", width = 6, height = 4, units= "in", dpi=300)
+ggsave("Fig1EF_new.png", width = 6, height = 4, units= "in", dpi=300)
 
 #######################################
 # Create individual plots for supplement
